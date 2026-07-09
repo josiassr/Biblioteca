@@ -1,0 +1,76 @@
+﻿<html>
+  <head>
+    <title>Biblioteca</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+    </style>
+  </head>
+  <body>
+    <div class="jumbotron text-center" style="margin-bottom:0">
+      <h1>Usuários</h1>
+    </div>
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="margin-bottom:20">
+      <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+          <li class="nav-item">
+              <a class="nav-link" href="http://localhost:8000/1">Usuarios</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="http://localhost:8000/3">Livros</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="http://localhost:8000/2">Tipos de usuários</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="http://localhost:8000/4">Categorias dos livros</a>
+          </li>
+          </ul>
+      </div>
+  </nav>
+
+    <div class="container">
+
+      <a href="/inserir1" class="btn btn-outline-primary" role="button" style="margin-bottom:20">Inserir Usuário</a>
+      <table class="table" style="margin-bottom:20">
+        <thead>
+          <tr class="table-dark text-dark">
+            <th>Ação</th>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Sobrenome</th>
+            <th>Endereco</th>
+            <th>Cidade</th>
+            <th>Estado</th>
+            <th>Telefone</th>
+            <th>Id do tipo de usuário</th>
+          </tr>
+        </thead>
+        <% usuarios.forEach((club, index) => { %>
+          <tbody>
+            <tr class="table-light">
+              <td>
+                <a href="atualizar1?id=<%= club.id %>" >Atualizar</a>&nbsp;&nbsp;
+                <a href="excluir1?id=<%= club.id %>">Excluir</a>
+              </td>
+              <td><%= club.id %></td>
+              <td><%= club.nome %></td>
+              <td><%= club.sobrenome %></td>
+              <td><%= club.endereco %></td>
+              <td><%= club.cidade %></td>
+              <td><%= club.sigla_estado %></td>
+              <td><%= club.telefone %></td>
+              <td><%= club.tipo_usuario_id %></td>
+            </tr>
+          </tbody>
+        <% }) %>
+      </table>
+    </div>
+    <div class="jumbotron text-center" style="margin-bottom:0"></div>
+  </body>
+</html>

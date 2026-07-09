@@ -1,0 +1,66 @@
+﻿<html>
+    <head>
+        <title>Biblioteca</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <style>
+          .nav justify-content-center{
+              height: 50%;
+          }
+        </style>
+    </head>
+    <body>
+        <div class="jumbotron text-center" style="margin-bottom:0">
+            <h1>Atualização os Tipos de Usuários</h1>
+        </div>
+
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="margin-bottom:20">
+            <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:8000/1">Usuarios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:8000/3">Livros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:8000/2">Tipos de usuários</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost:8000/4">Categorias dos livros</a>
+                </li>
+                </ul>
+            </div>
+        </nav>
+
+        <form action="salvar2" method="post">
+            <div class="container">
+                <input type="hidden" name="id2" value= "<%= (Tipousuarios.length > 0 ? Tipousuarios[0].id:"") %>">
+
+                <div class="form-group">
+                    <label for="tipo_usuario">Tipo de usuário:</label>
+                    <input type="text" required="required" class="form-control" name="tipo_usuario" value="<%= (Tipousuarios.length > 0 ? Tipousuarios[0].tipo_usuario:"") %>" id="tipo_usuario" size="20">
+                </div>
+
+                <div class="form-group">
+                    <label for="multa_dia">Multa por dia:</label>
+                    <input type="number" step=".01" required="required" class="form-control" name="multa_dia" value="<%= (Tipousuarios.length > 0 ? Tipousuarios[0].multa_dia:"") %>" id="multa_dia" size="10">
+                </div>
+
+                <div class="form-group">
+                    <label for="prazo">Prazo:</label>
+                    <input type="number" required="required" class="form-control" name="prazo" value="<%= (Tipousuarios.length > 0 ? Tipousuarios[0].prazo:"") %>" id="prazo" size="10">
+                </div>
+            </div>
+
+            <div class="jumbotron text-center" style="margin-bottom:0">
+                <input type="submit" class="btn btn-outline-primary" role="button" name="acao3" value="Atualizar">
+                <input type="reset" class="btn btn-outline-primary" role="button" name="acao3" value="Cancelar">
+            </div>
+        </form>
+    </body>
+</html>
